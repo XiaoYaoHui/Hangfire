@@ -1,0 +1,157 @@
+2020-05-11 14:55:26.351 +08:00 [Information] Start up
+2020-05-11 14:55:28.288 +08:00 [Information] Now listening on: "http://localhost:5000"
+2020-05-11 14:55:28.294 +08:00 [Information] Application started. Press Ctrl+C to shut down.
+2020-05-11 14:55:28.295 +08:00 [Information] Hosting environment: "Development"
+2020-05-11 14:55:28.296 +08:00 [Information] Content root path: "E:\API\Core.Api"
+2020-05-11 14:55:31.515 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2020-05-11 14:55:31.597 +08:00 [Information] Request finished in 87.2588ms 301 
+2020-05-11 14:55:31.622 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/index.html  
+2020-05-11 14:55:31.654 +08:00 [Information] Request finished in 32.6415ms 200 text/html;charset=utf-8
+2020-05-11 14:55:31.682 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger-ui-standalone-preset.js  
+2020-05-11 14:55:31.682 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger-ui.css  
+2020-05-11 14:55:31.683 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger-ui-bundle.js  
+2020-05-11 14:55:31.934 +08:00 [Information] Sending file. Request path: '"/swagger-ui-standalone-preset.js"'. Physical path: '"N/A"'
+2020-05-11 14:55:31.934 +08:00 [Information] Sending file. Request path: '"/swagger-ui-bundle.js"'. Physical path: '"N/A"'
+2020-05-11 14:55:31.934 +08:00 [Information] Sending file. Request path: '"/swagger-ui.css"'. Physical path: '"N/A"'
+2020-05-11 14:55:31.940 +08:00 [Information] Request finished in 258.3331ms 200 application/javascript
+2020-05-11 14:55:31.941 +08:00 [Information] Request finished in 258.29ms 200 application/javascript
+2020-05-11 14:55:31.943 +08:00 [Information] Request finished in 260.0332ms 200 text/css
+2020-05-11 14:55:32.143 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json  
+2020-05-11 14:55:32.260 +08:00 [Information] Request finished in 117.6347ms 200 application/json;charset=utf-8
+2020-05-11 14:55:32.671 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger-ui-standalone-preset.js.map  
+2020-05-11 14:55:32.671 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger-ui-bundle.js.map  
+2020-05-11 14:55:32.694 +08:00 [Information] Request finished in 24.1066ms 404 
+2020-05-11 14:55:32.694 +08:00 [Information] Request finished in 22.7274ms 404 
+2020-05-11 14:55:32.699 +08:00 [Information] Request starting HTTP/1.1 GET http://127.0.0.1:5000/swagger-ui-standalone-preset.js.map  
+2020-05-11 14:55:32.700 +08:00 [Information] Request starting HTTP/1.1 GET http://127.0.0.1:5000/swagger-ui-bundle.js.map  
+2020-05-11 14:55:32.703 +08:00 [Information] Request finished in 4.1304ms 404 
+2020-05-11 14:55:32.704 +08:00 [Information] Request finished in 4.0801ms 404 
+2020-05-11 14:55:51.971 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/api/Students  
+2020-05-11 14:55:51.977 +08:00 [Information] Executing endpoint '"Core.Api.Controllers.StudentsController.Get (Core.Api)"'
+2020-05-11 14:55:52.003 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Students\"}". Executing controller action with signature "System.Collections.Generic.IEnumerable`1[Core.Api.Models.Student] Get()" on controller "Core.Api.Controllers.StudentsController" ("Core.Api").
+2020-05-11 14:55:52.114 +08:00 [Information] Executing action method "Core.Api.Controllers.StudentsController.Get (Core.Api)" - Validation state: Valid
+2020-05-11 14:55:52.299 +08:00 [Information] [{"Id":1,"Name":"小明","Class":"1班","Age":10,"Sex":"女"},{"Id":2,"Name":"小明","Class":"2班","Age":11,"Sex":"男"},{"Id":3,"Name":"小强","Class":"3班","Age":12,"Sex":"男"}]
+2020-05-11 14:55:52.301 +08:00 [Warning] LogWarning
+2020-05-11 14:55:52.301 +08:00 [Error] LogError
+2020-05-11 14:55:52.307 +08:00 [Information] Executed action method "Core.Api.Controllers.StudentsController.Get (Core.Api)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 183.451ms.
+2020-05-11 14:55:52.314 +08:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Core.Api.Models.Student, Core.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2020-05-11 14:55:52.323 +08:00 [Information] Executed action "Core.Api.Controllers.StudentsController.Get (Core.Api)" in 310.394ms
+2020-05-11 14:55:52.324 +08:00 [Information] Executed endpoint '"Core.Api.Controllers.StudentsController.Get (Core.Api)"'
+2020-05-11 14:55:52.327 +08:00 [Information] Request finished in 356.3254ms 200 application/json; charset=utf-8
+2020-05-11 14:57:55.080 +08:00 [Information] Application is shutting down...
+2020-05-11 14:59:08.358 +08:00 [Information] Start up
+2020-05-11 14:59:10.413 +08:00 [Information] Now listening on: "http://localhost:5000"
+2020-05-11 14:59:10.420 +08:00 [Information] Application started. Press Ctrl+C to shut down.
+2020-05-11 14:59:10.420 +08:00 [Information] Hosting environment: "Development"
+2020-05-11 14:59:10.421 +08:00 [Information] Content root path: "E:\API\Core.Api"
+2020-05-11 14:59:15.364 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2020-05-11 14:59:15.476 +08:00 [Information] Request finished in 113.4512ms 301 
+2020-05-11 14:59:15.500 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/index.html  
+2020-05-11 14:59:15.528 +08:00 [Information] Request finished in 27.7688ms 200 text/html;charset=utf-8
+2020-05-11 14:59:15.553 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger-ui-standalone-preset.js  
+2020-05-11 14:59:15.553 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger-ui.css  
+2020-05-11 14:59:15.553 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger-ui-bundle.js  
+2020-05-11 14:59:15.654 +08:00 [Information] Sending file. Request path: '"/swagger-ui.css"'. Physical path: '"N/A"'
+2020-05-11 14:59:15.703 +08:00 [Information] Sending file. Request path: '"/swagger-ui-bundle.js"'. Physical path: '"N/A"'
+2020-05-11 14:59:15.655 +08:00 [Information] Sending file. Request path: '"/swagger-ui-standalone-preset.js"'. Physical path: '"N/A"'
+2020-05-11 14:59:15.731 +08:00 [Information] Request finished in 178.1371ms 200 text/css
+2020-05-11 14:59:15.734 +08:00 [Information] Request finished in 181.3599ms 200 application/javascript
+2020-05-11 14:59:15.737 +08:00 [Information] Request finished in 184.8923ms 200 application/javascript
+2020-05-11 14:59:15.959 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json  
+2020-05-11 14:59:16.022 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger-ui-standalone-preset.js.map  
+2020-05-11 14:59:16.022 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger-ui-bundle.js.map  
+2020-05-11 14:59:16.048 +08:00 [Information] Request finished in 26.2137ms 404 
+2020-05-11 14:59:16.048 +08:00 [Information] Request finished in 26.2136ms 404 
+2020-05-11 14:59:16.053 +08:00 [Information] Request starting HTTP/1.1 GET http://127.0.0.1:5000/swagger-ui-standalone-preset.js.map  
+2020-05-11 14:59:16.053 +08:00 [Information] Request starting HTTP/1.1 GET http://127.0.0.1:5000/swagger-ui-bundle.js.map  
+2020-05-11 14:59:16.056 +08:00 [Information] Request finished in 2.6299ms 404 
+2020-05-11 14:59:16.056 +08:00 [Information] Request finished in 2.1233ms 404 
+2020-05-11 14:59:16.099 +08:00 [Information] Request finished in 140.4966ms 200 application/json;charset=utf-8
+2020-05-11 14:59:34.513 +08:00 [Information] Application is shutting down...
+2020-05-11 15:01:30.971 +08:00 [Information] Start up
+2020-05-11 15:01:32.912 +08:00 [Information] Now listening on: "http://localhost:5000"
+2020-05-11 15:01:32.917 +08:00 [Information] Application started. Press Ctrl+C to shut down.
+2020-05-11 15:01:32.918 +08:00 [Information] Hosting environment: "Development"
+2020-05-11 15:01:32.919 +08:00 [Information] Content root path: "E:\API\Core.Api"
+2020-05-11 15:01:36.017 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2020-05-11 15:01:36.098 +08:00 [Information] Request finished in 83.2833ms 301 
+2020-05-11 15:01:36.122 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/index.html  
+2020-05-11 15:01:36.153 +08:00 [Information] Request finished in 31.5374ms 200 text/html;charset=utf-8
+2020-05-11 15:01:36.180 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger-ui-bundle.js  
+2020-05-11 15:01:36.180 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger-ui-standalone-preset.js  
+2020-05-11 15:01:36.180 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger-ui.css  
+2020-05-11 15:01:36.237 +08:00 [Information] Sending file. Request path: '"/swagger-ui.css"'. Physical path: '"N/A"'
+2020-05-11 15:01:36.237 +08:00 [Information] Sending file. Request path: '"/swagger-ui-standalone-preset.js"'. Physical path: '"N/A"'
+2020-05-11 15:01:36.289 +08:00 [Information] Sending file. Request path: '"/swagger-ui-bundle.js"'. Physical path: '"N/A"'
+2020-05-11 15:01:36.301 +08:00 [Information] Request finished in 121.9123ms 200 text/css
+2020-05-11 15:01:36.303 +08:00 [Information] Request finished in 123.5484ms 200 application/javascript
+2020-05-11 15:01:36.304 +08:00 [Information] Request finished in 124.3113ms 200 application/javascript
+2020-05-11 15:01:36.532 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json  
+2020-05-11 15:01:36.589 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger-ui-bundle.js.map  
+2020-05-11 15:01:36.589 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger-ui-standalone-preset.js.map  
+2020-05-11 15:01:36.616 +08:00 [Information] Request finished in 26.913ms 404 
+2020-05-11 15:01:36.616 +08:00 [Information] Request finished in 27.0876ms 404 
+2020-05-11 15:01:36.622 +08:00 [Information] Request starting HTTP/1.1 GET http://127.0.0.1:5000/swagger-ui-bundle.js.map  
+2020-05-11 15:01:36.623 +08:00 [Information] Request starting HTTP/1.1 GET http://127.0.0.1:5000/swagger-ui-standalone-preset.js.map  
+2020-05-11 15:01:36.623 +08:00 [Information] Request finished in 1.2874ms 404 
+2020-05-11 15:01:36.624 +08:00 [Information] Request finished in 0.7602ms 404 
+2020-05-11 15:01:36.684 +08:00 [Information] Request finished in 152.3665ms 200 application/json;charset=utf-8
+2020-05-11 15:01:48.320 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/api/Students  
+2020-05-11 15:01:48.331 +08:00 [Information] Executing endpoint '"Core.Api.Controllers.StudentsController.Get (Core.Api)"'
+2020-05-11 15:01:48.362 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Students\"}". Executing controller action with signature "System.Collections.Generic.IEnumerable`1[Core.Api.Models.Student] Get()" on controller "Core.Api.Controllers.StudentsController" ("Core.Api").
+2020-05-11 15:01:48.451 +08:00 [Information] Executing action method "Core.Api.Controllers.StudentsController.Get (Core.Api)" - Validation state: Valid
+2020-05-11 15:01:48.644 +08:00 [Information] [{"Id":1,"Name":"小明","Class":"1班","Age":10,"Sex":"女"},{"Id":2,"Name":"小明","Class":"2班","Age":11,"Sex":"男"},{"Id":3,"Name":"小强","Class":"3班","Age":12,"Sex":"男"}]
+2020-05-11 15:01:48.646 +08:00 [Warning] LogWarning
+2020-05-11 15:01:48.647 +08:00 [Error] LogError
+2020-05-11 15:01:48.658 +08:00 [Information] Executed action method "Core.Api.Controllers.StudentsController.Get (Core.Api)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 194.4043ms.
+2020-05-11 15:01:48.663 +08:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Core.Api.Models.Student, Core.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2020-05-11 15:01:48.679 +08:00 [Information] Executed action "Core.Api.Controllers.StudentsController.Get (Core.Api)" in 308.5537ms
+2020-05-11 15:01:48.680 +08:00 [Information] Executed endpoint '"Core.Api.Controllers.StudentsController.Get (Core.Api)"'
+2020-05-11 15:01:48.681 +08:00 [Information] Request finished in 361.4598ms 200 application/json; charset=utf-8
+2020-05-11 15:04:21.122 +08:00 [Information] Application is shutting down...
+2020-05-11 15:04:26.948 +08:00 [Information] Start up
+2020-05-11 15:04:29.050 +08:00 [Information] Now listening on: "http://localhost:5000"
+2020-05-11 15:04:29.055 +08:00 [Information] Application started. Press Ctrl+C to shut down.
+2020-05-11 15:04:29.056 +08:00 [Information] Hosting environment: "Development"
+2020-05-11 15:04:29.057 +08:00 [Information] Content root path: "E:\API\Core.Api"
+2020-05-11 15:04:32.159 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2020-05-11 15:04:32.269 +08:00 [Information] Request finished in 114.0366ms 301 
+2020-05-11 15:04:32.291 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/index.html  
+2020-05-11 15:04:32.319 +08:00 [Information] Request finished in 27.9493ms 200 text/html;charset=utf-8
+2020-05-11 15:04:32.354 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger-ui-standalone-preset.js  
+2020-05-11 15:04:32.355 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger-ui.css  
+2020-05-11 15:04:32.355 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger-ui-bundle.js  
+2020-05-11 15:04:32.527 +08:00 [Information] Sending file. Request path: '"/swagger-ui-bundle.js"'. Physical path: '"N/A"'
+2020-05-11 15:04:32.528 +08:00 [Information] Sending file. Request path: '"/swagger-ui-standalone-preset.js"'. Physical path: '"N/A"'
+2020-05-11 15:04:32.534 +08:00 [Information] Request finished in 180.4206ms 200 application/javascript
+2020-05-11 15:04:32.534 +08:00 [Information] Request finished in 179.1012ms 200 application/javascript
+2020-05-11 15:04:32.528 +08:00 [Information] Sending file. Request path: '"/swagger-ui.css"'. Physical path: '"N/A"'
+2020-05-11 15:04:32.537 +08:00 [Information] Request finished in 182.0667ms 200 text/css
+2020-05-11 15:04:32.808 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json  
+2020-05-11 15:04:32.891 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger-ui-standalone-preset.js.map  
+2020-05-11 15:04:32.891 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger-ui-bundle.js.map  
+2020-05-11 15:04:32.946 +08:00 [Information] HTTP "GET" "/swagger-ui-standalone-preset.js.map" responded 404 in 42.6573 ms
+2020-05-11 15:04:32.955 +08:00 [Information] HTTP "GET" "/swagger-ui-bundle.js.map" responded 404 in 0.1954 ms
+2020-05-11 15:04:32.972 +08:00 [Information] Request finished in 81.8069ms 404 
+2020-05-11 15:04:32.972 +08:00 [Information] Request finished in 81.1354ms 404 
+2020-05-11 15:04:33.003 +08:00 [Information] Request starting HTTP/1.1 GET http://127.0.0.1:5000/swagger-ui-bundle.js.map  
+2020-05-11 15:04:33.004 +08:00 [Information] Request starting HTTP/1.1 GET http://127.0.0.1:5000/swagger-ui-standalone-preset.js.map  
+2020-05-11 15:04:33.009 +08:00 [Information] HTTP "GET" "/swagger-ui-bundle.js.map" responded 404 in 0.0215 ms
+2020-05-11 15:04:33.018 +08:00 [Information] Request finished in 15.1165ms 404 
+2020-05-11 15:04:33.009 +08:00 [Information] HTTP "GET" "/swagger-ui-standalone-preset.js.map" responded 404 in 0.0183 ms
+2020-05-11 15:04:33.033 +08:00 [Information] Request finished in 28.751ms 404 
+2020-05-11 15:04:33.059 +08:00 [Information] Request finished in 250.9227ms 200 application/json;charset=utf-8
+2020-05-11 15:04:42.896 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/api/Students  
+2020-05-11 15:04:42.904 +08:00 [Information] Executing endpoint '"Core.Api.Controllers.StudentsController.Get (Core.Api)"'
+2020-05-11 15:04:42.929 +08:00 [Information] Route matched with "{action = \"Get\", controller = \"Students\"}". Executing controller action with signature "System.Collections.Generic.IEnumerable`1[Core.Api.Models.Student] Get()" on controller "Core.Api.Controllers.StudentsController" ("Core.Api").
+2020-05-11 15:04:43.010 +08:00 [Information] Executing action method "Core.Api.Controllers.StudentsController.Get (Core.Api)" - Validation state: Valid
+2020-05-11 15:04:43.164 +08:00 [Information] [{"Id":1,"Name":"小明","Class":"1班","Age":10,"Sex":"女"},{"Id":2,"Name":"小明","Class":"2班","Age":11,"Sex":"男"},{"Id":3,"Name":"小强","Class":"3班","Age":12,"Sex":"男"}]
+2020-05-11 15:04:43.166 +08:00 [Warning] LogWarning
+2020-05-11 15:04:43.167 +08:00 [Error] LogError
+2020-05-11 15:04:43.194 +08:00 [Information] Executed action method "Core.Api.Controllers.StudentsController.Get (Core.Api)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 174.9319ms.
+2020-05-11 15:04:43.202 +08:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Core.Api.Models.Student, Core.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2020-05-11 15:04:43.215 +08:00 [Information] Executed action "Core.Api.Controllers.StudentsController.Get (Core.Api)" in 276.1258ms
+2020-05-11 15:04:43.216 +08:00 [Information] Executed endpoint '"Core.Api.Controllers.StudentsController.Get (Core.Api)"'
+2020-05-11 15:04:43.217 +08:00 [Information] HTTP "GET" "/api/Students" responded 200 in 318.0367 ms
+2020-05-11 15:04:43.219 +08:00 [Information] Request finished in 323.9441ms 200 application/json; charset=utf-8
+2020-05-11 15:05:34.323 +08:00 [Information] Application is shutting down...
