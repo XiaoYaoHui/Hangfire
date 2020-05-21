@@ -68,7 +68,7 @@
              </summary>
              <param name="services"></param>
         </member>
-        <member name="M:Core.Api.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Hangfire.IBackgroundJobClient,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+        <member name="M:Core.Api.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
             This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         </member>
     </members>

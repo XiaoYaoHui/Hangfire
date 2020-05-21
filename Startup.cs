@@ -49,21 +49,21 @@ namespace Core.Api
                     Title = "My Api",
                     Version = "v1"
                 });
-                var basePath = AppContext.BaseDirectory;
+                var basePath =  AppContext.BaseDirectory;
                 var xmlPath = Path.Combine(basePath, "Core.Api.xml");
                 swagger.IncludeXmlComments(xmlPath, true);
             });
 
             #endregion
-
+            
             #region Hangfire
-
+            /*
             var mysqlHangFire = Configuration.GetConnectionString("HangfireConnection");
             services.AddHangfire(x => x.UseStorage(new MySqlStorage(mysqlHangFire,new MySqlStorageOptions
             {
                 TransactionIsolationLevel = System.Data.IsolationLevel.ReadCommitted,       //  事务隔离级别。默认值为读提交
                 TransactionTimeout = TimeSpan.FromMinutes(1),                                               // 事务超时。默认为1分钟
-                QueuePollInterval = TimeSpan.Zero,                                                                      // 作业队列轮询间隔。默认值为15秒
+                QueuePollInterval = TimeSpan.FromSeconds(15),                                                                      // 作业队列轮询间隔。默认值为15秒
                 JobExpirationCheckInterval = TimeSpan.FromHours(1),                                     //  作业过期检查间隔（管理过期记录）。默认为1小时
                 CountersAggregateInterval = TimeSpan.FromMinutes(5),                                // 间隔到聚合计数器。默认为5分钟
                 PrepareSchemaIfNecessary = true,                                                                        //如果设置为true，则创建数据库表。默认值为true
@@ -71,7 +71,7 @@ namespace Core.Api
             })));
 
             services.AddHangfireServer();
-
+            */
             #endregion
 
             services.AddControllers();
@@ -79,7 +79,7 @@ namespace Core.Api
         }
 
         /// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IBackgroundJobClient backgroundJobs,IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app,/* IBackgroundJobClient backgroundJobs,*/IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -123,8 +123,10 @@ namespace Core.Api
 
             app.UseAuthorization();
 
+            #region Hangfire
+            /*
             //Map to the "/hangfire"，DashboardOptions ， 多个Dashboard，使用不同的storage
-            app.UseHangfireDashboard("/hangfire",new DashboardOptions
+            app.UseHangfireDashboard("/hangfire", new DashboardOptions
             {
                 //AppPath = "http://your-app.net",    //Back to site link，返回的链接地址
                 IsReadOnlyFunc = (DashboardContext context) => true,  //ReadOnly View
@@ -136,11 +138,14 @@ namespace Core.Api
             app.UseHangfireServer(new BackgroundJobServerOptions
             {
                 ServerName = $"{Environment.MachineName}-{Guid.NewGuid().ToString()}",
-                Queues = new string[]{"test","quece001"},    //队列名称参数必须仅包含小写字母，数字和下划线字符
+                Queues = new string[] { "test", "quece001" },    //队列名称参数必须仅包含小写字母，数字和下划线字符
                 WorkerCount = Environment.ProcessorCount * 5, //核心数，最大限制20 //并发任务数
                 SchedulePollingInterval = TimeSpan.FromMinutes(1)
             });
             backgroundJobs.Enqueue(() => Console.WriteLine("Hello World for Hang-fire"));
+            **/
+            #endregion
+
 
             app.UseEndpoints(endpoints =>
             {
