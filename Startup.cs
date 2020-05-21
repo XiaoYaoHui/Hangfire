@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using Core.Api.App;
 using Core.Api.Applications;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -8,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Serilog;
 using Hangfire;
+using Hangfire.Dashboard;
 using Hangfire.MySql.Core;
 
 namespace Core.Api
@@ -57,7 +59,16 @@ namespace Core.Api
             #region Hangfire
 
             var mysqlHangFire = Configuration.GetConnectionString("HangfireConnection");
-            services.AddHangfire(x => x.UseStorage(new MySqlStorage(mysqlHangFire)));
+            services.AddHangfire(x => x.UseStorage(new MySqlStorage(mysqlHangFire,new MySqlStorageOptions
+            {
+                TransactionIsolationLevel = System.Data.IsolationLevel.ReadCommitted,       //  事务隔离级别。默认值为读提交
+                TransactionTimeout = TimeSpan.FromMinutes(1),                                               // 事务超时。默认为1分钟
+                QueuePollInterval = TimeSpan.Zero,                                                                      // 作业队列轮询间隔。默认值为15秒
+                JobExpirationCheckInterval = TimeSpan.FromHours(1),                                     //  作业过期检查间隔（管理过期记录）。默认为1小时
+                CountersAggregateInterval = TimeSpan.FromMinutes(5),                                // 间隔到聚合计数器。默认为5分钟
+                PrepareSchemaIfNecessary = true,                                                                        //如果设置为true，则创建数据库表。默认值为true
+                DashboardJobListLimit = 50000,                                                                           // 仪表板作业列表上限。默认值为50000
+            })));
 
             services.AddHangfireServer();
 
@@ -108,10 +119,27 @@ namespace Core.Api
             });
             #endregion
 
-            //app.UseAuthentication();
+            app.UseAuthentication();
+
             app.UseAuthorization();
 
-            app.UseHangfireDashboard();
+            //Map to the "/hangfire"，DashboardOptions ， 多个Dashboard，使用不同的storage
+            app.UseHangfireDashboard("/hangfire",new DashboardOptions
+            {
+                //AppPath = "http://your-app.net",    //Back to site link，返回的链接地址
+                IsReadOnlyFunc = (DashboardContext context) => true,  //ReadOnly View
+                Authorization = new IDashboardAuthorizationFilter[]
+                {
+                    new MyAuthorizationFilter()
+                }
+            });
+            app.UseHangfireServer(new BackgroundJobServerOptions
+            {
+                ServerName = $"{Environment.MachineName}-{Guid.NewGuid().ToString()}",
+                Queues = new string[]{"test","quece001"},    //队列名称参数必须仅包含小写字母，数字和下划线字符
+                WorkerCount = Environment.ProcessorCount * 5, //核心数，最大限制20 //并发任务数
+                SchedulePollingInterval = TimeSpan.FromMinutes(1)
+            });
             backgroundJobs.Enqueue(() => Console.WriteLine("Hello World for Hang-fire"));
 
             app.UseEndpoints(endpoints =>

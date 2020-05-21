@@ -54,5 +54,3 @@ E:\API\Core.Api\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.D
 E:\API\Core.Api\bin\Debug\netcoreapp3.1\Dapper.dll
 E:\API\Core.Api\bin\Debug\netcoreapp3.1\Hangfire.MySql.Core.dll
 E:\API\Core.Api\bin\Debug\netcoreapp3.1\MySqlConnector.dll
-E:\API\Core.Api\obj\Debug\netcoreapp3.1\Core.Api.MvcApplicationPartsAssemblyInfo.cs
-E:\API\Core.Api\obj\Debug\netcoreapp3.1\Core.Api.MvcApplicationPartsAssemblyInfo.cache
