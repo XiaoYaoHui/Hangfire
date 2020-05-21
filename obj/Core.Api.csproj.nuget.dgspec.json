@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\API\\Core.Api\\Core.Api.csproj": {}
+    "D:\\Work\\Repos\\Hangfire\\Core.Api.csproj": {}
   },
   "projects": {
-    "E:\\API\\Core.Api\\Core.Api.csproj": {
+    "D:\\Work\\Repos\\Hangfire\\Core.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\API\\Core.Api\\Core.Api.csproj",
+        "projectUniqueName": "D:\\Work\\Repos\\Hangfire\\Core.Api.csproj",
         "projectName": "Core.Api",
-        "projectPath": "E:\\API\\Core.Api\\Core.Api.csproj",
-        "packagesPath": "C:\\Users\\zhanghui36\\.nuget\\packages\\",
-        "outputPath": "E:\\API\\Core.Api\\obj\\",
+        "projectPath": "D:\\Work\\Repos\\Hangfire\\Core.Api.csproj",
+        "packagesPath": "C:\\Users\\Mr.慧\\.nuget\\packages\\",
+        "outputPath": "D:\\Work\\Repos\\Hangfire\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\zhanghui36\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Mr.慧\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -25,10 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "http://go.microsoft.com/fwlink/?LinkID=206669": {},
-          "http://nrm.recloud.com.cn:8081/repository/nuget-group/": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://www.nuget.org/api/v2/": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
@@ -87,7 +81,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
         }
       }
     }
