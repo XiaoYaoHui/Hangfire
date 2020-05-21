@@ -57,7 +57,7 @@ namespace Core.Api
             #endregion
             
             #region Hangfire
-            /*
+            
             var mysqlHangFire = Configuration.GetConnectionString("HangfireConnection");
             services.AddHangfire(x => x.UseStorage(new MySqlStorage(mysqlHangFire,new MySqlStorageOptions
             {
@@ -68,10 +68,10 @@ namespace Core.Api
                 CountersAggregateInterval = TimeSpan.FromMinutes(5),                                // 间隔到聚合计数器。默认为5分钟
                 PrepareSchemaIfNecessary = true,                                                                        //如果设置为true，则创建数据库表。默认值为true
                 DashboardJobListLimit = 50000,                                                                           // 仪表板作业列表上限。默认值为50000
-            })));
+            })).UseSerilogLogProvider());
 
             services.AddHangfireServer();
-            */
+            
             #endregion
 
             services.AddControllers();
@@ -79,7 +79,7 @@ namespace Core.Api
         }
 
         /// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app,/* IBackgroundJobClient backgroundJobs,*/IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IBackgroundJobClient backgroundJobs,IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -124,7 +124,7 @@ namespace Core.Api
             app.UseAuthorization();
 
             #region Hangfire
-            /*
+            
             //Map to the "/hangfire"，DashboardOptions ， 多个Dashboard，使用不同的storage
             app.UseHangfireDashboard("/hangfire", new DashboardOptions
             {
@@ -143,7 +143,7 @@ namespace Core.Api
                 SchedulePollingInterval = TimeSpan.FromMinutes(1)
             });
             backgroundJobs.Enqueue(() => Console.WriteLine("Hello World for Hang-fire"));
-            **/
+            
             #endregion
 
 
