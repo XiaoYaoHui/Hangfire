@@ -1,18 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Core.Api.Common;
 using Hangfire;
+using Serilog;
 
 namespace Core.Api.Applications
 {
     public class HangfireApplication
     {
         private readonly IBackgroundJobClient _backgroundJobClient;
+        private readonly ILogger _logger;
 
-        public HangfireApplication(IBackgroundJobClient backgroundJobClient)
+        public HangfireApplication(IBackgroundJobClient backgroundJobClient,ILogger logger)
         {
             _backgroundJobClient = backgroundJobClient;
+            _logger = logger;
         }
 
         public void HangfireTest()
@@ -29,6 +30,18 @@ namespace Core.Api.Applications
             RecurringJob.AddOrUpdate("First RecurrringJob", () => Console.WriteLine("RecurringJob is running"), cronExpression: Cron.MinuteInterval(interval: 2));
             RecurringJob.RemoveIfExists("Test remove RecurringJob");
             RecurringJob.Trigger("First RecurringJob");
+        }
+
+        public void HangfireTwo()
+        {
+            _logger.Information("Log Start...........");
+
+            _backgroundJobClient.Enqueue<HangfireService>(x => x.Test("Test Enquence"));
+            _backgroundJobClient.Schedule<HangfireService>(x => x.Test("Schedule Delay one Minutes"),TimeSpan.FromMinutes(1));
+            _logger.Information("中间商");
+            RecurringJob.AddOrUpdate("ss", () => Console.WriteLine("Job Id"),CronType.Minute(2));
+
+            _logger.Information("Log End ..............");
         }
     }
 }

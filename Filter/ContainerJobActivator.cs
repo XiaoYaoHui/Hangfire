@@ -19,15 +19,5 @@ namespace Core.Api.Filter
         {
             _container = container;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="jobType"></param>
-        /// <returns></returns>
-        public override object ActivateJob(Type jobType)
-        {
-            return _container.(jobType);
-        }
     }
 }

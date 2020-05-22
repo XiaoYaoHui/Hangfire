@@ -1,7 +1,5 @@
 using System;
-using System.Collections.Generic;
 using System.IO;
-using Core.Api.App;
 using Core.Api.Applications;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -11,6 +9,7 @@ using Microsoft.Extensions.Hosting;
 using Serilog;
 using Hangfire;
 using Hangfire.Dashboard;
+using Hangfire.Dashboard.BasicAuthorization;
 using Hangfire.MySql.Core;
 
 namespace Core.Api
@@ -62,21 +61,23 @@ namespace Core.Api
             var mysqlHangFire = Configuration.GetConnectionString("HangfireConnection");
             services.AddHangfire(x => x.UseStorage(new MySqlStorage(mysqlHangFire,new MySqlStorageOptions
             {
+                //TablePrefix = MeowvBlogConsts.DbTablePrefix + "hangfire",                           //数据表前缀
                 TransactionIsolationLevel = System.Data.IsolationLevel.ReadCommitted,       //  事务隔离级别。默认值为读提交
                 TransactionTimeout = TimeSpan.FromMinutes(1),                                               // 事务超时。默认为1分钟
-                QueuePollInterval = TimeSpan.FromSeconds(15),                                                                      // 作业队列轮询间隔。默认值为15秒
+                QueuePollInterval = TimeSpan.FromSeconds(15),                                                // 作业队列轮询间隔。默认值为15秒
                 JobExpirationCheckInterval = TimeSpan.FromHours(1),                                     //  作业过期检查间隔（管理过期记录）。默认为1小时
                 CountersAggregateInterval = TimeSpan.FromMinutes(5),                                // 间隔到聚合计数器。默认为5分钟
                 PrepareSchemaIfNecessary = true,                                                                        //如果设置为true，则创建数据库表。默认值为true
                 DashboardJobListLimit = 50000,                                                                           // 仪表板作业列表上限。默认值为50000
             })).UseSerilogLogProvider());
 
-            services.AddHangfireServer(n => n.CancellationCheckInterval = TimeSpan.FromSeconds(5));
+            //services.AddHangfireServer(n => n.CancellationCheckInterval = TimeSpan.FromSeconds(5));
 
             #endregion
 
-            services.AddControllers();
             services.AddScoped<IStudentRepository, StudentRepository>();
+            services.AddScoped<HangfireApplication>();
+            services.AddControllers();
         }
 
         /// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -127,14 +128,32 @@ namespace Core.Api
             #region Hangfire
             
             //Map to the "/hangfire"，DashboardOptions ， 多个Dashboard，使用不同的storage
-            app.UseHangfireDashboard("/hangfire", new DashboardOptions
+            app.UseHangfireDashboard("/hangfire", options:new DashboardOptions
             {
                 //AppPath = "http://your-app.net",    //Back to site link，返回的链接地址
                 IsReadOnlyFunc = (DashboardContext context) => true,  //ReadOnly View
-                Authorization = new IDashboardAuthorizationFilter[]
+                //Authorization = new IDashboardAuthorizationFilter[]
+                //{
+                //    new MyAuthorizationFilter()
+                //},
+                Authorization = new[]
                 {
-                    new MyAuthorizationFilter()
-                }
+                    new BasicAuthAuthorizationFilter(new BasicAuthAuthorizationFilterOptions
+                    {
+                        RequireSsl = false,
+                        SslRedirect = false,
+                        LoginCaseSensitive = true,
+                        Users = new []
+                        {
+                            new BasicAuthAuthorizationUser
+                            {
+                                Login = Configuration.GetSection("Hangfire:Username").Get<string>(),     // AppSettings.Hangfire.Login,
+                                PasswordClear = Configuration.GetSection("Hangfire:Password").Get<string>(), // AppSettings.Hangfire.Password
+                            }
+                        }
+                    })
+                },
+                DashboardTitle = "任务调度中心",
             });
 
             app.UseHangfireServer(new BackgroundJobServerOptions
@@ -144,9 +163,8 @@ namespace Core.Api
                 WorkerCount = Environment.ProcessorCount * 5, //核心数，最大限制20 //并发任务数
                 SchedulePollingInterval = TimeSpan.FromMinutes(1)   //轮询时间间隔  ，设置成1分钟
             });
-            
+            backgroundJobs.Enqueue(() => Console.WriteLine("Start up"));
             #endregion
-
 
             app.UseEndpoints(endpoints =>
             {

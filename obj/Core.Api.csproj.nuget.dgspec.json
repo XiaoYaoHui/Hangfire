@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Work\\Repos\\Hangfire\\Core.Api.csproj": {}
+    "E:\\API\\Core.Api\\Core.Api.csproj": {}
   },
   "projects": {
-    "D:\\Work\\Repos\\Hangfire\\Core.Api.csproj": {
+    "E:\\API\\Core.Api\\Core.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Work\\Repos\\Hangfire\\Core.Api.csproj",
+        "projectUniqueName": "E:\\API\\Core.Api\\Core.Api.csproj",
         "projectName": "Core.Api",
-        "projectPath": "D:\\Work\\Repos\\Hangfire\\Core.Api.csproj",
-        "packagesPath": "C:\\Users\\Mr.慧\\.nuget\\packages\\",
-        "outputPath": "D:\\Work\\Repos\\Hangfire\\obj\\",
+        "projectPath": "E:\\API\\Core.Api\\Core.Api.csproj",
+        "packagesPath": "C:\\Users\\zhanghui36\\.nuget\\packages\\",
+        "outputPath": "E:\\API\\Core.Api\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Mr.慧\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\zhanghui36\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,7 +25,10 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "http://go.microsoft.com/fwlink/?LinkID=206669": {},
+          "http://nrm.recloud.com.cn:8081/repository/nuget-group/": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://www.nuget.org/api/v2/": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
@@ -46,9 +52,17 @@
               "target": "Package",
               "version": "[1.7.11, )"
             },
+            "Hangfire.Dashboard.BasicAuthorization": {
+              "target": "Package",
+              "version": "[1.0.2, )"
+            },
             "Hangfire.MySql.Core": {
               "target": "Package",
               "version": "[2.2.5, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.1.0-preview1-19509-03, )"
             },
             "Serilog.AspNetCore": {
               "target": "Package",
@@ -81,7 +95,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

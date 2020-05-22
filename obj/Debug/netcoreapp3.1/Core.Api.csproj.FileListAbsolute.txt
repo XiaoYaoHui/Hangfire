@@ -114,3 +114,6 @@ D:\Work\Repos\Hangfire\obj\Debug\netcoreapp3.1\staticwebassets\Core.Api.StaticWe
 D:\Work\Repos\Hangfire\obj\Debug\netcoreapp3.1\Core.Api.dll
 D:\Work\Repos\Hangfire\obj\Debug\netcoreapp3.1\Core.Api.pdb
 D:\Work\Repos\Hangfire\obj\Debug\netcoreapp3.1\Core.Api.genruntimeconfig.cache
+E:\API\Core.Api\obj\Debug\netcoreapp3.1\Core.Api.MvcApplicationPartsAssemblyInfo.cs
+E:\API\Core.Api\obj\Debug\netcoreapp3.1\Core.Api.MvcApplicationPartsAssemblyInfo.cache
+E:\API\Core.Api\bin\Debug\netcoreapp3.1\Hangfire.Dashboard.BasicAuthorization.dll

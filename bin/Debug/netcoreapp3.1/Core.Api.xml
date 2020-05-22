@@ -4,6 +4,68 @@
         <name>Core.Api</name>
     </assembly>
     <members>
+        <member name="T:Core.Api.Common.CronType">
+            <summary>
+            Cron类型
+            </summary>
+        </member>
+        <member name="M:Core.Api.Common.CronType.Minute(System.Int32)">
+            <summary>
+            周期性为分钟的任务
+            </summary>
+            <param name="interval">执行周期的间隔，默认为每分钟一次</param>
+            <returns></returns>
+        </member>
+        <member name="M:Core.Api.Common.CronType.Hour(System.Int32,System.Int32)">
+            <summary>
+            周期性为小时的任务
+            </summary>
+            <param name="minute">第几分钟开始，默认为第一分钟</param>
+            <param name="interval">执行周期的间隔，默认为每小时一次</param>
+            <returns></returns>
+        </member>
+        <member name="M:Core.Api.Common.CronType.Day(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            周期性为天的任务
+            </summary>
+            <param name="hour">第几小时开始，默认从1点开始</param>
+            <param name="minute">第几分钟开始，默认从第1分钟开始</param>
+            <param name="interval">执行周期的间隔，默认为每天一次</param>
+            <returns></returns>
+        </member>
+        <member name="M:Core.Api.Common.CronType.Week(System.DayOfWeek,System.Int32,System.Int32)">
+            <summary>
+            周期性为周的任务
+            </summary>
+            <param name="dayOfWeek">星期几开始，默认从星期一点开始</param>
+            <param name="hour">第几小时开始，默认从1点开始</param>
+            <param name="minute">第几分钟开始，默认从第1分钟开始</param>
+            <returns></returns>
+        </member>
+        <member name="M:Core.Api.Common.CronType.Month(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            周期性为月的任务
+            </summary>
+            <param name="day">几号开始，默认从一号开始</param>
+            <param name="hour">第几小时开始，默认从1点开始</param>
+            <param name="minute">第几分钟开始，默认从第1分钟开始</param>
+            <returns></returns>
+        </member>
+        <member name="M:Core.Api.Common.CronType.Year(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            周期性为年的任务
+            </summary>
+            <param name="month">几月开始，默认从一月开始</param>
+            <param name="day">几号开始，默认从一号开始</param>
+            <param name="hour">第几小时开始，默认从1点开始</param>
+            <param name="minute">第几分钟开始，默认从第1分钟开始</param>
+            <returns></returns>
+        </member>
+        <member name="M:Core.Api.Controllers.HangfiresController.CreateHangfire">
+            <summary>
+            创建调度任务
+            </summary>
+        </member>
         <member name="T:Core.Api.Controllers.StudentsController">
             <summary>
             学生Api
@@ -50,6 +112,17 @@
             <param name="id"></param>
             <returns></returns>
         </member>
+        <member name="T:Core.Api.Filter.ContainerJobActivator">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Core.Api.Filter.ContainerJobActivator.#ctor(System.ComponentModel.IContainer)">
+            <summary>
+            
+            </summary>
+            <param name="container"></param>
+        </member>
         <member name="T:Core.Api.Startup">
             <summary>
             --
@@ -68,7 +141,7 @@
              </summary>
              <param name="services"></param>
         </member>
-        <member name="M:Core.Api.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+        <member name="M:Core.Api.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Hangfire.IBackgroundJobClient,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
             This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         </member>
     </members>
