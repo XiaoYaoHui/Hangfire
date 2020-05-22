@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using Core.Api.App;
 using Core.Api.Applications;
@@ -70,7 +71,7 @@ namespace Core.Api
                 DashboardJobListLimit = 50000,                                                                           // 仪表板作业列表上限。默认值为50000
             })));
 
-            services.AddHangfireServer();
+            services.AddHangfireServer(n => n.CancellationCheckInterval = TimeSpan.FromSeconds(5));
 
             #endregion
 
@@ -133,14 +134,14 @@ namespace Core.Api
                     new MyAuthorizationFilter()
                 }
             });
+
             app.UseHangfireServer(new BackgroundJobServerOptions
             {
                 ServerName = $"{Environment.MachineName}-{Guid.NewGuid().ToString()}",
-                Queues = new string[]{"test","quece001"},    //队列名称参数必须仅包含小写字母，数字和下划线字符
+                Queues = new string[]{"default","quece001"},    //队列名称参数必须仅包含小写字母，数字和下划线字符
                 WorkerCount = Environment.ProcessorCount * 5, //核心数，最大限制20 //并发任务数
-                SchedulePollingInterval = TimeSpan.FromMinutes(1)
+                SchedulePollingInterval = TimeSpan.FromMinutes(1)   //轮询时间间隔  ，设置成1分钟
             });
-            backgroundJobs.Enqueue(() => Console.WriteLine("Hello World for Hang-fire"));
 
             app.UseEndpoints(endpoints =>
             {
