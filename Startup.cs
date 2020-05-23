@@ -23,10 +23,8 @@ namespace Core.Api
         /// 启动
         /// </summary>
         /// <param name="configuration"></param>
-        /// <param name="logger"></param>
-        public Startup(IConfiguration configuration/*,ILogger logger*/)
+        public Startup(IConfiguration configuration)
         {
-            //_logger = logger;
             Configuration = configuration;
         }
 
@@ -77,6 +75,7 @@ namespace Core.Api
 
             services.AddScoped<IStudentRepository, StudentRepository>();
             services.AddScoped<HangfireApplication>();
+            services.AddScoped<HangfireService>();
             services.AddControllers();
         }
 
@@ -108,7 +107,7 @@ namespace Core.Api
             #endregion
 
             //倾向于不希望对静态文件进行请求日志记录
-            app.UseSerilogRequestLogging();
+            //app.UseSerilogRequestLogging();
 
             app.UseRouting();
 
@@ -121,7 +120,7 @@ namespace Core.Api
             });
             #endregion
 
-            app.UseAuthentication();
+            //app.UseAuthentication();
 
             app.UseAuthorization();
 
@@ -163,7 +162,7 @@ namespace Core.Api
                 WorkerCount = Environment.ProcessorCount * 5, //核心数，最大限制20 //并发任务数
                 SchedulePollingInterval = TimeSpan.FromMinutes(1)   //轮询时间间隔  ，设置成1分钟
             });
-            backgroundJobs.Enqueue(() => Console.WriteLine("Start up"));
+            //backgroundJobs.Enqueue(() => Console.WriteLine("Start up"));
             #endregion
 
             app.UseEndpoints(endpoints =>

@@ -71,7 +71,7 @@
             学生Api
             </summary>
         </member>
-        <member name="M:Core.Api.Controllers.StudentsController.#ctor(Core.Api.Applications.IStudentRepository,Microsoft.Extensions.Logging.ILogger{Core.Api.Controllers.StudentsController})">
+        <member name="M:Core.Api.Controllers.StudentsController.#ctor(Core.Api.Applications.IStudentRepository,Serilog.ILogger)">
             <summary>
             构造
             </summary>
@@ -133,7 +133,6 @@
             启动
             </summary>
             <param name="configuration"></param>
-            <param name="logger"></param>
         </member>
         <member name="M:Core.Api.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
              <summary>

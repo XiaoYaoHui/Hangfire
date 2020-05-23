@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Hangfire;
 using Core.Api.Applications;
 using Core.Api.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
+using Serilog;
 
 namespace Core.Api.Controllers
 {
@@ -17,14 +16,14 @@ namespace Core.Api.Controllers
     public class StudentsController : Controller
     {
         private readonly IStudentRepository _studentRepository;
-        private readonly ILogger<StudentsController> _logger;
+        private readonly ILogger _logger;
 
         /// <summary>
         /// 构造
         /// </summary>
         /// <param name="studentRepository"></param>
         /// <param name="logger"></param>
-        public StudentsController(IStudentRepository studentRepository,ILogger<StudentsController> logger)
+        public StudentsController(IStudentRepository studentRepository,ILogger logger)
         {
             _studentRepository = studentRepository;
             _logger = logger;
@@ -36,10 +35,12 @@ namespace Core.Api.Controllers
         [HttpGet]
         public IEnumerable<Student> Get()
         {
-            _logger.LogInformation(JsonConvert.SerializeObject(_studentRepository.List()));
-            _logger.LogWarning("LogWarning");
-            _logger.LogError("LogError");
-            _logger.LogDebug("LogDebug");
+            _logger.Information("开始.......");
+            BackgroundJob.Enqueue(() => Console.WriteLine("获取学生列表"));
+            _logger.Information(JsonConvert.SerializeObject(_studentRepository.List()));
+            _logger.Warning("LogWarning");
+            _logger.Error("LogError");
+            _logger.Debug("LogDebug");
             return _studentRepository.List();
         }
 
