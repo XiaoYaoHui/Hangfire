@@ -61,6 +61,17 @@
             <param name="minute">第几分钟开始，默认从第1分钟开始</param>
             <returns></returns>
         </member>
+        <member name="T:Core.Api.Controllers.ExceptionController">
+            <summary>
+            异常
+            </summary>
+        </member>
+        <member name="M:Core.Api.Controllers.ExceptionController.Index">
+            <summary>
+            捕获异常
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:Core.Api.Controllers.HangfiresController.CreateHangfire">
             <summary>
             创建调度任务
@@ -140,7 +151,7 @@
              </summary>
              <param name="services"></param>
         </member>
-        <member name="M:Core.Api.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Hangfire.IBackgroundJobClient,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+        <member name="M:Core.Api.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
             This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         </member>
     </members>

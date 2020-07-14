@@ -20,7 +20,6 @@ E:\API\Core.Api\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
 E:\API\Core.Api\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
 E:\API\Core.Api\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
 E:\API\Core.Api\obj\Debug\netcoreapp3.1\Core.Api.csproj.CopyComplete
-E:\API\Core.Api\obj\Debug\netcoreapp3.1\Core.Api.csprojAssemblyReference.cache
 E:\API\Core.Api\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
 E:\API\Core.Api\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
 E:\API\Core.Api\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
@@ -117,3 +116,4 @@ D:\Work\Repos\Hangfire\obj\Debug\netcoreapp3.1\Core.Api.genruntimeconfig.cache
 E:\API\Core.Api\obj\Debug\netcoreapp3.1\Core.Api.MvcApplicationPartsAssemblyInfo.cs
 E:\API\Core.Api\obj\Debug\netcoreapp3.1\Core.Api.MvcApplicationPartsAssemblyInfo.cache
 E:\API\Core.Api\bin\Debug\netcoreapp3.1\Hangfire.Dashboard.BasicAuthorization.dll
+E:\API\Core.Api\obj\Debug\netcoreapp3.1\Core.Api.csprojAssemblyReference.cache
